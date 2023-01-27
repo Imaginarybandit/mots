@@ -1,0 +1,22 @@
+<% if (success && success.length) {%>
+    <div id="flash-card" class="flashsuccess d-flex flex-row justify-content-between px-2">
+        <div class="align-self-center msg">
+            <%= success %>
+
+        </div>
+        <a id="X" class="align-self-center X " href="#">X</a>
+
+    </div>
+    <% } %>
+
+        <% if(error && error.length ){ %>
+            <div id="flash-card" class="flasherror d-flex flex-row justify-content-between px-2">
+                <div class="align-self-center msg">
+                    <%= error %>
+
+                </div>
+                <a id="X" class="align-self-center X " href="#">X</a>
+            </div>
+            <% } %>
+
+    <script src="/js/flashOperations.js"></script>

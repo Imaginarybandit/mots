@@ -1,0 +1,105 @@
+<%- include('../partials/header') %>
+    <link rel="stylesheet" href="/css/homePage.css">
+
+    </head>
+
+    <body>
+        <div class="container-fluid"></div>
+        <% if ( aboutPage !=='true' ){%>
+            <div id="blurryBackground" class="blurryBackground">
+                <div id="aboutPage" class="aboutPage text-center my-auto">
+                    <p>Welcome to MOTS. This is a personal project that uses the DeepL API to
+                        translate
+                        words
+                        from french to english and the Oxford Dictionary API to give a definition. I am
+                        using
+                        both of this APIs in their limited free tier, so over usage of the website may
+                        result in
+                        it not working. But do not let that stop you from enjoying the website.
+                    </p>
+                    <button id="Pagebutton" class="btn searchButton">Close</button>
+                </div>
+            </div>
+            <% } %>
+                <%- include('../partials/options') %>
+                    <%- include('../partials/flash') %>
+
+
+                        <div class="main">
+                            <form action="/home/wordSearch" method="get">
+                                <div class="text-center">
+
+
+                                    <input id="french" type="text" name="frenchWord" value="<%= fword %>"
+                                        class="wordInputs d-block mx-auto mb-5">
+
+                                    <input id="english" type="text" name="englishWord" class="wordInputs mb-5"
+                                        value="<%=eword%>" readonly>
+
+
+                                </div>
+
+                                <button class="btn searchButton mb-5"> search</button>
+
+                            </form>
+
+                            <!-- Aqui se crea el espacio para la definicion de la palabra en ingles-->
+                            <% if( response===" " ) {%>
+                                <div class=" bg-light mx-auto definitionBox">
+
+                                    <p>The Definition of the word will be here ...</p>
+                                </div>
+                                <% } else if( response!==" " ){%>
+
+                                    <div class="bg-light mx-auto definitionBox">
+
+                                        <p>
+                                            <%= response.data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
+                                                %>
+                                        </p>
+
+                                    </div>
+
+                                    <% } else if(response===undefined ){%>
+                                        <div class=" bg-light mx-auto definitionBox">
+
+                                            <p>No definition could be found.</p>
+                                        </div>
+                                        <% }else if(response===404){%>
+                                            <p>Could not find a definition</p>
+                                            <% } %>
+
+
+
+                                                <form class="mb-5" id="filler" action='/home/wordSearch?_method=PATCH'
+                                                    method="POST">
+
+                                                    <input class="d-none" name="frenchWord" value="<%= fword %>" />
+                                                    <input class="d-none" name="englishWord" value="<%=eword%>" />
+
+
+                                                    <% if(!currentUser){%>
+
+                                                        <button id="searchButton" class="btn searchButton my-4"
+                                                            disabled>Save</button>
+                                                        <p>Need to be <a href="/register">registered</a> or <a
+                                                                href="/login">logged
+                                                                in</a> to save
+                                                            to
+                                                            notebook</p>
+                                                        <% }else{%>
+
+                                                            <button id="searchButton"
+                                                                class="btn searchButton mt-4 mb-2">Save</button>
+                                                            <a class="d-block" href="/logout">log out</a>
+                                                            <% } %>
+                                                </form>
+
+                        </div>
+                        </div>
+
+    </body>
+    <script src="/js/noteBookFiller.js"></script>
+    <script src="/js/aboutPage.js"></script>
+
+    </html>

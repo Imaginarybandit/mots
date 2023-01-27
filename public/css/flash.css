@@ -1,0 +1,66 @@
+body {
+    overflow-x: hidden;
+}
+
+.flashsuccess {
+    position: fixed;
+    top: 10%;
+    width: 30em;
+    height: 7.5em;
+    border-radius: 5px;
+    background-color: #fefae0;
+    transition: all 0.15s;
+    border: 3px solid #0ead69;
+    z-index: 3;
+
+}
+
+.flasherror {
+    position: fixed;
+    top: 10%;
+    width: 30em;
+    height: 7.5em;
+    border-radius: 5px;
+    background-color: #fefae0;
+    transition: all 0.15s;
+    border: 3px solid #d62828;
+    z-index: 3;
+
+}
+
+.msg {
+    font-size: 1.5em;
+    font-family: 'Kanit';
+}
+
+.X {
+
+    font-size: 1.25em;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    transition: all 0.15s;
+
+}
+
+.X:hover {
+    color: #adb5bd;
+    text-decoration: none;
+}
+
+@media (max-width:665px) {
+    .flashsuccess {
+        position: none;
+        width: 90%;
+        z-index: 0;
+        top: 0;
+    }
+
+    .flasherror {
+        position: none;
+        width: 90%;
+        z-index: 0;
+        top: 0;
+        margin: 1em auto;
+    }
+}

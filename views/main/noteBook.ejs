@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+    <link rel="stylesheet" href="/css/notebook.css">
+    </head>
+
+    <body>
+        <%- include('../partials/options') %>
+            <%- include('../partials/flash') %>
+                <div class="container">
+                    <h2 class="text-center">Your Save Words</h2>
+                    <div class="row d-flex flex-row justify-content-center">
+
+                        <% for(let items of users.noteBook.vocabulary){ %>
+                            <div class="col-3 wordBox mx-2 my-2 text-center ">
+                                <p>
+                                    <%= items.englishWord %>
+
+                                </p>
+                                <p>
+                                    <%= items.frenchWord %>
+                                </p>
+
+                                <form action="/notebook/<%= id %>?_method=PATCH" method="post">
+                                    <input name="wordId" value="<%= items._id %>" class="d-none">
+
+                                    <button class="btn Button my-4"> remove</button>
+                                </form>
+                            </div>
+                            <% } %>
+                    </div>
+                    <a href="/logout">log out</a>
+                </div>
+
+    </body>
+
+    </html>

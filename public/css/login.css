@@ -1,0 +1,29 @@
+.wordInputs {
+    width: 32em;
+    height: 3em;
+    border-radius: 5px;
+    font-size: 1.25em;
+    border: 0px
+}
+
+label {
+    font-size: 1.5em;
+    font-family: 'Kanit';
+
+}
+
+.searchButton {
+    border-radius: 5px;
+    border-color: none;
+    background-color: #fefae0;
+    width: 8.5em;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: 'Kanit';
+}
+
+@media (max-width: 665px) {
+    .wordInputs {
+        width: 85%;
+    }
+}

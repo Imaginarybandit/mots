@@ -1,0 +1,26 @@
+<%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/css/login.css">
+    </head>
+
+    <body>
+
+        <%- include('../../partials/options') %>
+            <%- include('../../partials/flash') %>
+                <form action="/login" method="POST">
+
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="wordInputs d-block mx-auto mb-5" required>
+
+
+
+                    <label for=" password">Password</label>
+                    <input type="password" name="password" id="password" class="wordInputs d-block mx-auto mb-5"
+                        required>
+                    <button class="btn searchButton mb-3">Submit</button>
+
+                    <p>Don't have an account? <a href="/register">register</a></p>
+                </form>
+
+    </body>
+
+    </html>

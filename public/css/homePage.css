@@ -1,0 +1,72 @@
+.body {
+    z-index: 0;
+    position: relative;
+}
+
+.main {
+    z-index: 1;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+/*Esto es para la barra del Input*/
+.wordInputs {
+    width: 35em;
+    height: 3em;
+    border-radius: 5px;
+    font-size: 1.25em;
+    border: 0px
+}
+
+/* Los elementos del boton de Search*/
+
+.searchButton {
+    background-color: #fefae0;
+    width: 8.5em;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: 'Kanit';
+    transition: all .5s;
+}
+
+/* Aqui se define las caracteristicas de la caja la cual contendra la definicion*/
+
+.definitionBox {
+    border: 0px;
+    width: 45em;
+    height: 15em;
+    border-radius: 5px;
+
+}
+
+.aboutPage {
+    padding: 1em;
+    border: 1px solid black;
+    background-color: #fefae0;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+
+}
+
+.blurryBackground {
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 3;
+}
+
+@media(max-width:780px) {
+    .definitionBox {
+        width: 90%;
+    }
+
+    .wordInputs {
+        width: 90%;
+    }
+}

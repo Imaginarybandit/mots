@@ -1,0 +1,23 @@
+.wordBox {
+    width: auto;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1.65em;
+    font-family: 'Kanit';
+
+}
+
+
+
+.Button {
+    background-color: #fefae0;
+    width: 8.5em;
+    font-size: .75em;
+    font-weight: bold;
+    font-family: 'Kanit';
+}
+
+.Button:hover {
+    background-color: #caf0f8;
+    border-color: #caf0f8;
+}
