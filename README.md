@@ -3,7 +3,7 @@ A simple website that uses the DeepL and Oxford Dictionnary APIs to translate wo
 
 ## **Built with**
 
--Javascript
--Express Js
--CSS
--HTML
+-Javascript/n
+-Express Js/n
+-CSS/n
+-HTML/n
